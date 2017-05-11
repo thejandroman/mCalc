@@ -36,9 +36,11 @@
     <script>
      $(function(){
        $('#appraisedValue').on('input', function(){
-         var appValue = $('#appraisedValue').val();
+         var appValue   = $('#appraisedValue').val(),
+             moneyDown  = appValue * 0.2260587925,
+             additional = (265000 >= appValue) ? (265000 - appValue) : 0;
 
-         $('#total').val(parseFloat((appValue * 0.2260587925) + (265000 - appValue)).toFixed(2));
+         $('#total').val(parseFloat(moneyDown + additional).toFixed(2));
        });
      });
     </script>
