@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How much will Cassie and Jandro pay?</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>How much will Cassie and Jandro pay?</h1>
+          <hr />
+          <form>
+             <div class="form-group">
+               <label for="appraisedValue">Appraised Value of Home</label>
+               <div class="input-group">
+                 <span class="input-group-addon" aria-hidden="true">$</span>
+                 <input type="number" class="form-control" id="appraisedValue" placeholder="265000">
+               </div>
+             </div>
+          </form>
+          <hr />
+          <p>Cassie and Jandro will pay:</p>
+          <div class="input-group">
+            <span class="input-group-addon" aria-hidden="true">$</span>
+            <input id="total" class="form-control" type="text" placeholder="Readonly input here…" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+     $(function(){
+       $('#appraisedValue').on('input', function(){
+         var appValue = $('#appraisedValue').val();
+
+         $('#total').val(parseFloat((appValue * 0.2260587925) + (265000 - appValue)).toFixed(2));
+       });
+     });
+    </script>
+  </body>
+</html>
